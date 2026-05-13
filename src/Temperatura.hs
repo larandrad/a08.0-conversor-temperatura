@@ -33,3 +33,5 @@ main = do
           let temps = fromJust maybeTemps
           putStrLn (printf "Temperatura em Fahrenheit: %.2f" (fst temps))
           putStrLn (printf "Temperatura em Kelvin: %.2f" (snd temps))  
+
+          
