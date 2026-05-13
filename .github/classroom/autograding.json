@@ -1,0 +1,114 @@
+{
+  "tests": [
+    {
+      "name": "Função converteTemperatura - Zero Celsius",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/converte zero grau Celsius\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Temperatura positiva",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/converte temperatura positiva\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Menos quarenta",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/converte temperatura em que Celsius e Fahrenheit coincidem\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Zero absoluto",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/aceita exatamente o zero absoluto\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Abaixo do zero absoluto",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/retorna Nothing para temperatura abaixo do zero absoluto\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Prop: válidas",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/retorna Just para temperaturas válidas\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Prop: inválidas",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/retorna Nothing para temperaturas abaixo do zero absoluto\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Função converteTemperatura - Prop: fórmulas",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Função converteTemperatura/calcula Fahrenheit e Kelvin pelas fórmulas esperadas\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Ação main - Entrada válida",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Ação main/imprime Fahrenheit e Kelvin para uma entrada válida\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Ação main - Entrada inválida",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Ação main/imprime mensagem de erro para entrada não numérica\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "Ação main - Abaixo do zero absoluto",
+      "setup": "",
+      "run": "LANG=C.UTF-8 cabal run conversor-temperatura:test:tests -- --no-color --match \"Ação main/imprime mensagem de erro para temperatura abaixo do zero absoluto\"",
+      "input": "",
+      "output": "1 example, 0 failures",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 1
+    }
+  ]
+}

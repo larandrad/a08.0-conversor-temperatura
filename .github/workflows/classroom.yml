@@ -1,0 +1,43 @@
+name: GitHub Classroom Workflow - Conversor de temperatura
+
+on:
+  - push
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build_and_test:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Haskell
+        id: setup-haskell
+        uses: haskell-actions/setup@v2
+        with:
+          ghc-version: '9.8.4'
+          cabal-version: '3.14.2.0'
+
+      - name: Cache Cabal store
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cabal/store
+            dist-newstyle
+          key: ${{ runner.os }}-ghc-${{ steps.setup-haskell.outputs.ghc-version }}-cabal-${{ steps.setup-haskell.outputs.cabal-version }}-${{ hashFiles('**/*.cabal', '**/cabal.project') }}
+          restore-keys: |
+            ${{ runner.os }}-ghc-${{ steps.setup-haskell.outputs.ghc-version }}-cabal-${{ steps.setup-haskell.outputs.cabal-version }}-
+
+      - name: Update Cabal package index
+        run: cabal update
+
+      - name: Build project and tests
+        run: cabal build --enable-tests
+
+      - name: Run autograding tests
+        uses: education/autograding@v1
